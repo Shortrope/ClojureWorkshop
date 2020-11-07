@@ -25,6 +25,9 @@
         (let [weapon-fn (weapon weapon-fn-map)]
             (update target :health weapon-fn))))
 
+(defn mighty-strike [target]
+    (update target :health (apply comp (vals weapon-fn-map))))
+
 (def ally {
     :name "Carla" 
     :health 80 
